@@ -1,0 +1,62 @@
+MANUAL COPY INSTRUCTIONS - UDRG VPS MIGRATION
+
+=== STEP-BY-STEP PROCESS ===
+
+1. CREATE FOLDERS ON YOUR COMPUTER:
+   - Create main folder: "udrg-migration"
+   - Inside create: server/, shared/, client/, uploads/
+
+2. CLICK AND COPY THESE FILES FROM REPLIT:
+
+FILE 1: downloadable_backup/members_data.csv
+→ This contains your 996 members
+→ Save as: members_data.csv
+
+FILE 2: downloadable_backup/users_data.csv  
+→ This contains your 46 admin users
+→ Save as: users_data.csv
+
+FILE 3: downloadable_backup/package.json
+→ This contains dependencies list
+→ Save as: package.json
+
+FILE 4: downloadable_backup/.env.example
+→ Configuration template for your VPS
+→ Save as: .env.example
+
+FILE 5: downloadable_backup/deploy_to_vps.sh
+→ Deployment automation script
+→ Save as: deploy_to_vps.sh
+
+=== FOLDERS TO COPY ===
+
+FOLDER 1: downloadable_backup/server/
+→ Copy all files from this folder to your server/ folder
+→ Key files: index.ts, routes.ts, storage.ts
+
+FOLDER 2: downloadable_backup/shared/
+→ Copy all files to your shared/ folder  
+→ Key file: schema.ts (database structure)
+
+FOLDER 3: downloadable_backup/client/
+→ Copy all files to your client/ folder
+→ This is your React frontend
+
+=== PHOTOS/UPLOADS ===
+→ These are in backup_20250729_014531/uploads/ (3GB)
+→ 3,442 files - copy separately or upload directly to VPS
+
+=== TEST YOUR COPY ===
+After copying, you should have:
+✓ members_data.csv (about 280KB)
+✓ users_data.csv (about 7KB)
+✓ package.json (about 4KB)
+✓ server/ folder with TypeScript files
+✓ shared/schema.ts file
+✓ client/ folder with React files
+
+=== NEXT STEPS FOR VPS ===
+1. Upload all files to your VPS
+2. Edit .env.example with your database details
+3. Run deployment script
+4. Your 996 members will be imported automatically

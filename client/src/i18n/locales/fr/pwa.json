@@ -1,0 +1,20 @@
+{
+  "pwa": {
+    "offline": "Mode Hors-ligne",
+    "offlineDescription": "Vous êtes actuellement hors-ligne. Certaines fonctionnalités peuvent être limitées.",
+    "online": "Connecté",
+    "onlineDescription": "Vous êtes à nouveau en ligne. Toutes les fonctionnalités sont disponibles.",
+    "updateAvailable": "Mise à jour Disponible",
+    "updateDescription": "Une nouvelle version de l'application est disponible. Cliquez pour mettre à jour.",
+    "update": "Mettre à jour",
+    "installPrompt": "Installer l'Application",
+    "installPromptDescription": "Installez UDRG MMS sur votre appareil pour un accès hors-ligne et une expérience améliorée.",
+    "install": "Installer",
+    "installSuccess": "Installation Réussie",
+    "installSuccessDescription": "L'application a été installée avec succès. Vous pouvez maintenant y accéder depuis votre écran d'accueil.",
+    "laterButton": "Plus tard",
+    "installInfo": "Information d'installation",
+    "notSupported": "Non compatible",
+    "notSupportedDescription": "Votre navigateur ne prend pas en charge les Progressive Web Apps. Certaines fonctionnalités peuvent ne pas être disponibles."
+  }
+}

@@ -1,0 +1,71 @@
+# Dependencies
+node_modules/
+.npm
+.pnpm-debug.log*
+
+# Build outputs
+dist/
+build/
+
+# Environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory used by tools like istanbul
+coverage/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Large asset directories that shouldn't be in git
+uploads/
+attached_assets/
+exports/
+
+# Backup and temporary files
+*.bak
+*.tmp
+*.temp
+backup-*.sh
+restore-*.sh
+*.sql
+*.tar.gz
+complete_database_export.sql
+database_*.sql
+all_photos.tar.gz
+
+# Docker and deployment files (keep in git but comment out if causing issues)
+# docker-compose.yml
+# Dockerfile
+
+# Replit files (keep these)
+# .replit
+# replit.nix

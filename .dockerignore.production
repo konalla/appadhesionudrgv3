@@ -1,0 +1,134 @@
+# Ultra-aggressive .dockerignore for production builds
+# This reduces Docker context size dramatically
+
+# Exclude ALL documentation and development files
+**/*.md
+*.md
+docs/
+documentation/
+*.txt
+*.pdf
+LICENSE*
+CHANGELOG*
+HISTORY*
+
+# Exclude ALL development and IDE files
+.vscode/
+.idea/
+*.sublime-*
+.editorconfig
+.eslintrc*
+.prettierrc*
+jest.config.*
+vitest.config.*
+cypress/
+.cypress/
+
+# Exclude ALL test files and directories
+**/*.test.*
+**/*.spec.*
+test/
+tests/
+__tests__/
+coverage/
+.nyc_output/
+e2e/
+
+# Exclude ALL build artifacts and cache
+node_modules/
+.npm/
+.yarn/
+dist/
+build/
+.cache/
+.parcel-cache/
+.vite/
+.turbo/
+.eslintcache
+
+# Exclude ALL source maps and debugging files
+**/*.map
+**/*.map.js
+
+# Exclude ALL log files
+**/*.log
+logs/
+
+# Exclude ALL temporary files
+tmp/
+temp/
+.tmp/
+.temp/
+
+# Exclude MASSIVE asset directories
+attached_assets/
+screenshots/
+docs_assets/
+migration_docs/
+backup_files/
+uploads/
+
+# Additional massive directories found during deployment debugging
+migration_package/
+photos-backup/
+github-package/
+extracted_photos/
+downloadable_backup/
+
+# Exclude ALL git-related files
+.git/
+.gitignore
+.gitattributes
+.gitmodules
+
+# Exclude ALL environment files except production
+.env*
+!.env.production
+
+# Exclude ALL migration and deployment documentation
+BACKUP_INSTRUCTIONS.txt
+COPY_THESE_FILES.txt
+*MIGRATION*.md
+*DEPLOYMENT*.md
+*SETUP*.md
+*GUIDE*.md
+PRODUCTION_*.md
+VPS_*.md
+CPANEL_*.md
+GITHUB_*.md
+QUICK_*.md
+PHOTO_*.md
+analyze-*.ts
+
+# Exclude ALL development dependencies metadata
+yarn.lock
+package-lock.json
+.pnp.*
+
+# Exclude ALL OS files
+.DS_Store
+Thumbs.db
+Desktop.ini
+$RECYCLE_BIN/
+*.swp
+*.swo
+*~
+
+# Exclude Replit-specific files
+.replit
+replit.nix
+.breakpoints
+replit.md
+
+# Exclude runtime data
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Exclude coverage and reports
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+lib-cov/
+
+# Exclude optional dependencies
+node_modules/.cache/

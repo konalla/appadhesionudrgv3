@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hors ligne - UDRG MMS</title>
+  <style>
+    body {
+      font-family: 'Lato', 'Open Sans', sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      text-align: center;
+      background-color: #F5F7FA;
+      color: #2C3E50;
+    }
+    .container {
+      max-width: 90%;
+      width: 500px;
+      padding: 2rem;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      color: #2C3E50;
+      margin-top: 0;
+      margin-bottom: 1rem;
+    }
+    .icon {
+      background-color: #2C3E50;
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 1.5rem;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .icon svg {
+      width: 40px;
+      height: 40px;
+      fill: none;
+      stroke: white;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    p {
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+      color: #4A5568;
+    }
+    .button {
+      display: inline-block;
+      background-color: #27AE60;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.25rem;
+      text-decoration: none;
+      font-weight: 600;
+      margin-top: 1rem;
+      transition: background-color 0.2s;
+    }
+    .button:hover {
+      background-color: #219653;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="icon">
+      <svg viewBox="0 0 24 24">
+        <path d="M1 1 L23 23 M23 1 L1 23"></path>
+      </svg>
+    </div>
+    <h1>Vous êtes hors-ligne</h1>
+    <p>Il semble que vous n'êtes pas connecté à Internet en ce moment. Certaines fonctionnalités de l'application UDRG MMS ne sont pas disponibles sans connexion.</p>
+    <p>Reconnectez-vous à Internet pour accéder à toutes les fonctionnalités de l'application.</p>
+    <a href="/" class="button">Réessayer</a>
+    
+    <!-- English version (hidden by default) -->
+    <div id="english-version" style="display: none;">
+      <h1>You are offline</h1>
+      <p>It seems you are not connected to the Internet at the moment. Some features of the UDRG MMS application are not available without a connection.</p>
+      <p>Reconnect to the Internet to access all the features of the application.</p>
+      <a href="/" class="button">Try Again</a>
+    </div>
+  </div>
+
+  <script>
+    // Simple language detection
+    if (navigator.language && navigator.language.startsWith('en')) {
+      document.getElementById('english-version').style.display = 'block';
+      document.querySelector('.container > h1:first-of-type').style.display = 'none';
+      document.querySelector('.container > p:nth-of-type(1)').style.display = 'none';
+      document.querySelector('.container > p:nth-of-type(2)').style.display = 'none';
+      document.querySelector('.container > .button').style.display = 'none';
+    }
+  </script>
+</body>
+</html>

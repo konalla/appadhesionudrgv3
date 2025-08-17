@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Extracted Photos</title>
+</head>
+<body>
+    <h1>Test Extracted High-Quality Photos</h1>
+    
+    <h2>Member 00289313 - Mamadou Aliou Diallo</h2>
+    <img src="http://localhost:5000/api/photos/extracted_mamadou_aliou_diallo_00289313.jpg" 
+         style="max-width: 300px; border: 2px solid red;" 
+         alt="Member 00289313"
+         onload="console.log('Photo 1 loaded successfully')"
+         onerror="console.log('Photo 1 failed to load')">
+    
+    <h2>Member 00491812 - Mamadou Aliou Diallo</h2>
+    <img src="http://localhost:5000/api/photos/extracted_mamadou_aliou_diallo_00491812.jpg" 
+         style="max-width: 300px; border: 2px solid blue;" 
+         alt="Member 00491812"
+         onload="console.log('Photo 2 loaded successfully')"
+         onerror="console.log('Photo 2 failed to load')">
+    
+    <h2>Member 00367781 - Mamadou Oury Bah</h2>
+    <img src="http://localhost:5000/api/photos/extracted_mamadou_oury_bah_00367781.jpg" 
+         style="max-width: 300px; border: 2px solid green;" 
+         alt="Member 00367781"
+         onload="console.log('Photo 3 loaded successfully')"
+         onerror="console.log('Photo 3 failed to load')">
+    
+    <script>
+        console.log('Testing extracted photo access...');
+        
+        // Test direct API access for extracted photos
+        fetch('http://localhost:5000/api/photos/extracted_mamadou_aliou_diallo_00289313.jpg')
+            .then(response => {
+                console.log('API Response for photo 1:', response.status, response.statusText);
+                return response.blob();
+            })
+            .then(blob => {
+                console.log('Photo 1 blob size:', blob.size, 'bytes');
+            })
+            .catch(err => console.error('Photo 1 API error:', err));
+    </script>
+</body>
+</html>

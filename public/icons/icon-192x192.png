@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="192"
+   height="192"
+   viewBox="0 0 192 192"
+   fill="none"
+   version="1.1"
+   xmlns="http://www.w3.org/2000/svg">
+  <rect width="192" height="192" rx="30" fill="#2C3E50"/>
+  
+  <!-- Background Pattern -->
+  <path d="M 0 96 L 192 96" stroke="#27AE60" stroke-width="3" stroke-opacity="0.3"/>
+  <path d="M 96 0 L 96 192" stroke="#27AE60" stroke-width="3" stroke-opacity="0.3"/>
+  
+  <!-- People Group Icon - Stylized -->
+  <g transform="translate(28, 45) scale(0.7)">
+    <!-- First Person (Left) -->
+    <circle cx="45" cy="60" r="25" fill="#F5F7FA"/>
+    <path d="M 10 150 C 10 110, 45 110, 45 110 C 45 110, 80 110, 80 150" stroke="#F5F7FA" stroke-width="12" fill="none"/>
+    
+    <!-- Second Person (Middle) -->
+    <circle cx="100" cy="45" r="25" fill="#F5F7FA"/>
+    <path d="M 65 135 C 65 95, 100 95, 100 95 C 100 95, 135 95, 135 135" stroke="#F5F7FA" stroke-width="12" fill="none"/>
+    
+    <!-- Third Person (Right) -->
+    <circle cx="155" cy="60" r="25" fill="#F5F7FA"/>
+    <path d="M 120 150 C 120 110, 155 110, 155 110 C 155 110, 190 110, 190 150" stroke="#F5F7FA" stroke-width="12" fill="none"/>
+  </g>
+  
+  <!-- UDRG Text -->
+  <text x="96" y="150" font-family="Arial, sans-serif" font-weight="bold" font-size="30" fill="#F5F7FA" text-anchor="middle">UDRG</text>
+  <text x="96" y="170" font-family="Arial, sans-serif" font-size="10" fill="#27AE60" text-anchor="middle">Member Management</text>
+</svg>

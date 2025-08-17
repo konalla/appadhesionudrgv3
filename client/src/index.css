@@ -1,0 +1,594 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Tablet-specific optimizations to prevent crashes and improve performance */
+
+/* Reduce memory usage by limiting max-height on dropdowns */
+.select-content {
+  max-height: 200px !important;
+  overflow-y: auto;
+}
+
+/* Optimize image rendering for tablets */
+img {
+  image-rendering: optimizeSpeed;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: optimize-contrast;
+}
+
+/* Reduce complexity of box shadows on tablets */
+@media (max-width: 1024px) {
+  .shadow-lg {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1) !important;
+  }
+  
+  .shadow-md {
+    box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.1) !important;
+  }
+}
+
+/* Prevent memory-intensive transforms on tablets */
+@media (max-width: 1024px) {
+  * {
+    will-change: auto !important;
+  }
+  
+  .transform {
+    transform: none !important;
+  }
+  
+  .transition-all {
+    transition: none !important;
+  }
+}
+
+/* Optimize form performance on tablets */
+.tablet-optimized-form {
+  contain: layout style;
+  transform: translateZ(0);
+}
+
+/* Reduce animation complexity on tablets */
+@media (max-width: 1024px) {
+  .animate-spin {
+    animation-duration: 2s !important;
+  }
+  
+  .animate-pulse {
+    animation: none !important;
+  }
+}
+
+/* Memory-efficient country/federation selects */
+.large-select-content {
+  contain: strict;
+  height: 300px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* Section field dropdown icon sizing */
+.section-select .select-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 40px;
+}
+
+.section-select .select-trigger svg {
+  width: 16px !important;
+  height: 16px !important;
+  flex-shrink: 0;
+}
+
+/* Optimize photo upload area for tablets */
+.photo-upload-container {
+  contain: layout;
+  max-height: 400px;
+  overflow: hidden;
+}
+
+/* Prevent text selection issues on tablets */
+@media (max-width: 1024px) {
+  .form-field {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  input, textarea, select {
+    -webkit-user-select: text !important;
+    -moz-user-select: text !important;
+    user-select: text !important;
+  }
+}
+
+/* Reduce layout thrashing on tablets */
+.member-form {
+  contain: layout style;
+}
+
+.member-form .grid {
+  contain: layout;
+}
+
+/* Optimize button rendering on tablets */
+@media (max-width: 1024px) {
+  button {
+    contain: layout style;
+    transform: translateZ(0);
+  }
+}
+
+/* Prevent memory leaks from large country lists */
+.country-select {
+  contain: strict;
+  max-height: 250px;
+  overflow-y: auto;
+}
+
+/* Tablet-specific error boundary styles */
+.error-boundary-tablet {
+  contain: layout style;
+  max-width: 90vw;
+  margin: 20px auto;
+}
+
+/* Optimize calendar component for tablets */
+@media (max-width: 1024px) {
+  .calendar {
+    contain: layout;
+    transform: translateZ(0);
+  }
+  
+  .calendar-grid {
+    contain: strict;
+  }
+}
+
+/* Critical fix for gender select causing tablet crashes */
+.gender-select {
+  contain: layout !important;
+  max-height: 200px !important;
+  overflow-y: auto !important;
+  will-change: auto !important;
+  transform: translateZ(0) !important;
+}
+
+/* Gender-specific mobile optimizations */
+@media (max-width: 768px) {
+  .gender-select {
+    contain: layout !important;
+    max-height: 120px !important;
+    min-height: 80px !important;
+    overflow-y: auto !important;
+    z-index: 50 !important;
+    background: white !important;
+    border: 1px solid #e5e5e5 !important;
+    border-radius: 6px !important;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1) !important;
+  }
+  
+  .gender-trigger {
+    min-height: 44px !important;
+    touch-action: manipulation !important;
+    font-size: 16px !important;
+    padding: 8px 12px !important;
+  }
+  
+  .gender-item {
+    min-height: 44px !important;
+    padding: 12px 16px !important;
+    font-size: 16px !important;
+    line-height: 1.4 !important;
+    display: flex !important;
+    align-items: center !important;
+  }
+}
+
+/* Tablet-specific optimizations (769px to 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .gender-select {
+    contain: layout !important;
+    max-height: 160px !important;
+    overflow-y: auto !important;
+  }
+  
+  .gender-trigger {
+    min-height: 44px !important;
+    touch-action: manipulation !important;
+  }
+  
+  .gender-item {
+    min-height: 40px !important;
+    padding: 10px 14px !important;
+  }
+}
+
+/* Mobile-specific optimizations - less restrictive than tablet */
+@media (max-width: 768px) {
+  .gender-select {
+    contain: layout !important;
+    max-height: 200px !important;
+    min-height: 80px !important;
+  }
+  
+  .select-content {
+    contain: layout !important;
+    max-height: 250px !important;
+    min-height: 100px !important;
+  }
+  
+  .voter-card-select {
+    contain: layout !important;
+    max-height: 150px !important;
+    min-height: 80px !important;
+  }
+  
+  .section-select {
+    contain: layout !important;
+    max-height: 300px !important;
+    min-height: 100px !important;
+  }
+  
+  .country-select {
+    contain: layout !important;
+    max-height: 350px !important;
+    min-height: 150px !important;
+    z-index: 50 !important;
+    position: fixed !important;
+    background: white !important;
+    border: 1px solid #e5e5e5 !important;
+    border-radius: 6px !important;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1) !important;
+  }
+  
+  .country-trigger {
+    min-height: 44px !important;
+    font-size: 16px !important;
+    pointer-events: auto !important;
+  }
+  
+  .large-select-content {
+    contain: layout !important;
+    max-height: 300px !important;
+    min-height: 120px !important;
+  }
+  
+  [data-radix-select-content] {
+    contain: layout !important;
+    max-height: 300px !important;
+    min-height: 100px !important;
+  }
+  
+  [data-radix-select-item] {
+    contain: none !important;
+    transform: none !important;
+  }
+  
+  /* Improve mobile touch targets */
+  .select-trigger {
+    min-height: 44px !important;
+    touch-action: manipulation !important;
+  }
+  
+  .select-item {
+    min-height: 36px !important;
+    padding: 8px 12px !important;
+    touch-action: manipulation !important;
+  }
+  
+  /* Specific gender select mobile optimizations */
+  .gender-trigger {
+    min-height: 48px !important;
+    font-size: 16px !important;
+  }
+  
+  .gender-item {
+    min-height: 44px !important;
+    padding: 12px 16px !important;
+    font-size: 16px !important;
+  }
+  
+  /* Ensure dropdowns are visible on mobile */
+  .gender-select {
+    z-index: 50 !important;
+    position: relative !important;
+  }
+  
+  /* Force proper mobile rendering for problematic devices */
+  .gender-select [data-radix-select-content] {
+    position: fixed !important;
+    z-index: 9999 !important;
+  }
+}
+
+/* Tablet-specific fix for non-responsive dropdowns */
+@media (min-width: 769px) and (max-width: 1024px) {
+  /* Ensure clicks register on tablet */
+  .gender-trigger {
+    pointer-events: auto !important;
+    user-select: none !important;
+    -webkit-user-select: none !important;
+    -webkit-tap-highlight-color: transparent !important;
+    cursor: pointer !important;
+  }
+  
+  .gender-trigger:active {
+    background-color: rgba(0, 0, 0, 0.05) !important;
+  }
+  
+  /* Force proper dropdown positioning on tablets */
+  .gender-select [data-radix-select-content] {
+    position: absolute !important;
+    z-index: 1000 !important;
+    background: white !important;
+    border: 1px solid #ccc !important;
+    border-radius: 6px !important;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1) !important;
+  }
+}
+
+/* Mobile-friendly optimizations (phones and small tablets) */
+@media (max-width: 768px) {
+  [data-radix-select-content] {
+    contain: layout !important;
+    max-height: 300px !important;
+    min-height: 80px !important;
+    overflow-y: auto !important;
+    z-index: 50 !important;
+    position: fixed !important;
+  }
+  
+  [data-radix-select-item] {
+    contain: layout !important;
+    min-height: 44px !important;
+    padding: 12px 16px !important;
+    font-size: 16px !important; /* Prevent zoom on iOS */
+  }
+  
+  .select-trigger {
+    contain: layout !important;
+    min-height: 44px !important;
+    font-size: 16px !important; /* Prevent zoom on iOS */
+  }
+  
+  .select-content {
+    contain: layout !important;
+    max-height: 280px !important;
+    min-height: 60px !important;
+    overflow-y: auto !important;
+  }
+  
+  .select-item {
+    contain: layout !important;
+    min-height: 40px !important;
+    padding: 10px 14px !important;
+  }
+}
+
+/* Tablet crash prevention (769px to 1024px) - more restrictive */
+@media (min-width: 769px) and (max-width: 1024px) {
+  [data-radix-select-content] {
+    contain: layout !important;
+    max-height: 200px !important;
+    overflow-y: auto !important;
+    will-change: auto !important;
+    z-index: 1000 !important;
+    position: absolute !important;
+  }
+  
+  [data-radix-select-item] {
+    contain: layout !important;
+    transform: translateZ(0) !important;
+  }
+  
+  .select-trigger {
+    contain: layout !important;
+    pointer-events: auto !important;
+    cursor: pointer !important;
+  }
+  
+  .select-content {
+    contain: layout !important;
+    max-height: 150px !important;
+    overflow-y: auto !important;
+  }
+  
+  .select-item {
+    contain: layout !important;
+  }
+  
+  /* Specific fix for country dropdown on tablets */
+  .country-select {
+    contain: layout !important;
+    max-height: 300px !important;
+    overflow-y: auto !important;
+    z-index: 1001 !important;
+    position: absolute !important;
+    background: white !important;
+    border: 1px solid #e5e5e5 !important;
+    border-radius: 6px !important;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1) !important;
+  }
+  
+  .country-trigger {
+    pointer-events: auto !important;
+    user-select: none !important;
+    -webkit-user-select: none !important;
+    -webkit-tap-highlight-color: transparent !important;
+    cursor: pointer !important;
+  }
+  
+  .country-trigger:active {
+    background-color: rgba(0, 0, 0, 0.05) !important;
+  }
+}
+
+/* Additional tablet optimizations for specific selects */
+.section-select {
+  contain: strict !important;
+  max-height: 180px !important;
+  overflow-y: auto !important;
+}
+
+.voter-card-select {
+  z-index: 999 !important;
+  position: relative !important;
+  max-height: 200px !important;
+  overflow-y: auto !important;
+}
+
+.voter-card-select .select-item {
+  min-height: 40px !important;
+  padding: 8px 12px !important;
+  font-size: 14px !important;
+  line-height: 1.5 !important;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+.voter-card-select .select-item:hover {
+  background-color: #f3f4f6 !important;
+}
+
+/* Federation select optimization for tablets */
+@media (max-width: 1024px) {
+  .large-select-content {
+    contain: strict !important;
+    height: auto !important;
+    max-height: 200px !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+  }
+}
+
+/* Country dropdown filter optimization for all devices */
+.country-dropdown {
+  position: absolute !important;
+  z-index: 9999 !important;
+  background: white !important;
+  border: 1px solid #e5e5e5 !important;
+  border-radius: 6px !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1) !important;
+  max-height: 300px !important;
+  overflow-y: auto !important;
+  width: var(--radix-select-trigger-width) !important;
+  min-width: 200px !important;
+}
+
+/* Mobile optimization for country dropdown */
+@media (max-width: 768px) {
+  .country-dropdown {
+    contain: layout !important;
+    max-height: 250px !important;
+    min-height: 80px !important;
+    z-index: 999 !important;
+    position: fixed !important;
+    transform: translateZ(0) !important;
+  }
+  
+  .country-select {
+    contain: layout !important;
+    font-size: 16px !important; /* Prevent iOS zoom */
+    min-height: 44px !important; /* Better touch targets */
+    padding: 12px !important;
+    line-height: 1.5 !important;
+  }
+  
+  .country-select .select-item {
+    min-height: 44px !important;
+    padding: 12px 16px !important;
+    font-size: 16px !important;
+    cursor: pointer !important;
+    touch-action: manipulation !important;
+  }
+}
+
+/* Tablet optimization for country dropdown */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .country-dropdown {
+    contain: layout !important;
+    max-height: 280px !important;
+    z-index: 1001 !important;
+    position: absolute !important;
+  }
+  
+  .country-select {
+    contain: layout !important;
+    pointer-events: auto !important;
+    cursor: pointer !important;
+  }
+}
+
+/* Section dropdown optimization for enrollment agent forms */
+.section-select-trigger {
+  min-height: 44px;
+  font-size: 16px;
+  contain: layout;
+  position: relative;
+  z-index: 1;
+  pointer-events: auto !important;
+  cursor: pointer !important;
+}
+
+.section-select-content {
+  max-height: 300px;
+  overflow-y: auto;
+  position: fixed !important;
+  z-index: 9999 !important;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  contain: layout;
+}
+
+.section-select-content [data-radix-select-item] {
+  min-height: 40px;
+  padding: 10px 12px;
+  font-size: 14px;
+  line-height: 1.4;
+  cursor: pointer;
+  contain: layout;
+}
+
+.section-select-content [data-radix-select-item]:hover {
+  background-color: #f1f5f9;
+}
+
+/* Mobile and tablet optimizations for section dropdown */
+@media (max-width: 1024px) {
+  .section-select-trigger {
+    contain: layout;
+    pointer-events: auto;
+    min-height: 44px;
+    touch-action: manipulation;
+  }
+  
+  .section-select-content {
+    contain: layout;
+    max-height: 250px;
+    position: fixed !important;
+    z-index: 9999 !important;
+  }
+  
+  .section-select-content [data-radix-select-item] {
+    touch-action: manipulation;
+    min-height: 44px;
+    padding: 12px;
+    font-size: 16px; /* Prevent zoom on iOS */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+}

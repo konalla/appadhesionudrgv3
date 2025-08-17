@@ -1,0 +1,62 @@
+UDRG SYSTEM VPS MIGRATION - BACKUP ACCESS METHODS
+
+Since download option isn't available, here are your alternatives:
+
+=== METHOD 1: MANUAL FILE COPYING ===
+Copy these files from downloadable_backup folder:
+✓ members_data.csv (996 members)
+✓ users_data.csv (46 users)  
+✓ package.json (dependencies)
+✓ .env.example (configuration template)
+✓ deploy_to_vps.sh (deployment script)
+✓ README.md (instructions)
+
+Copy these folders completely:
+✓ server/ (backend code)
+✓ client/ (frontend code)  
+✓ shared/ (shared schemas)
+
+=== METHOD 2: USE REPLIT SHELL ===
+1. Open Shell in Replit
+2. Run: cat downloadable_backup/members_data.csv
+3. Copy output and save as .csv file
+4. Repeat for each important file
+
+=== METHOD 3: GITHUB EXPORT ===
+1. Create GitHub account (if needed)
+2. Create new private repository
+3. Follow git_export_guide.md instructions
+4. Download ZIP from GitHub
+
+=== METHOD 4: EMAIL YOURSELF ===
+For small files only:
+1. Open file in Replit
+2. Copy content
+3. Email to yourself
+4. Download on destination computer
+
+=== CRITICAL FILES FOR VPS ===
+Priority 1 (Essential):
+- members_data.csv (your member database)
+- users_data.csv (admin users)
+- package.json (dependencies list)
+
+Priority 2 (Important):
+- server/ folder (all backend code)
+- shared/ folder (database schemas)
+- .env.example (configuration)
+
+Priority 3 (Helpful):
+- client/ folder (frontend)
+- deploy_to_vps.sh (automation)
+- VPS_MIGRATION_STEPS.md (guide)
+
+=== MISSING FROM SMALL BACKUP ===
+- Upload files (3,442 photos) - 3GB
+- Located in: backup_20250729_014531/uploads/
+- Transfer these separately to VPS
+
+=== YOUR BACKUP IS READY ===
+Size: 1.8MB (without photos)
+Location: downloadable_backup/
+Contains: Complete working application + data

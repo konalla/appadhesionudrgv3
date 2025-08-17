@@ -1,0 +1,20 @@
+{
+  "pwa": {
+    "offline": "Offline Mode",
+    "offlineDescription": "You are currently offline. Some features may be limited.",
+    "online": "Connected",
+    "onlineDescription": "You are back online. All features are available.",
+    "updateAvailable": "Update Available",
+    "updateDescription": "A new version of the application is available. Click to update.",
+    "update": "Update",
+    "installPrompt": "Install App",
+    "installPromptDescription": "Install UDRG MMS on your device for offline access and enhanced experience.",
+    "install": "Install",
+    "installSuccess": "Installation Successful",
+    "installSuccessDescription": "The app has been successfully installed. You can now access it from your home screen.",
+    "laterButton": "Later",
+    "installInfo": "Installation Information",
+    "notSupported": "Not Supported",
+    "notSupportedDescription": "Your browser does not support Progressive Web Apps. Some features may not be available."
+  }
+}

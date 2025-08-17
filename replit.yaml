@@ -1,0 +1,43 @@
+# Production deployment configuration for Replit
+# This file defines how the application should be deployed in production
+
+# Build configuration
+build:
+  - name: "Install dependencies"
+    command: "npm install --production=false"
+  - name: "Build application"
+    command: "npm run build"
+  - name: "Initialize database"
+    command: "npm run db:push"
+
+# Production run command
+run:
+  command: "npm run start"
+  environment:
+    NODE_ENV: "production"
+    PORT: "5000"
+
+# Deployment target configuration
+deployment:
+  target: "cloudrun"
+  
+# Health check configuration
+health:
+  path: "/api/health"
+  port: 5000
+  timeout: 30
+
+# Environment variables for production
+env:
+  NODE_ENV: "production"
+  PORT: "5000"
+
+# Ignore development files during deployment
+ignore:
+  - "node_modules"
+  - ".git"
+  - "*.log"
+  - ".env.local"
+  - ".env.development"
+  - "src/"
+  - "client/"
